@@ -1,5 +1,18 @@
 import tensorflow as tf
 import csv
+import argparse
+
+# training defaults
+epochs = 100
+batch_size = 32
+
+def args():
+    parser = argparse.ArgumentParser(description="Train a model to predict position and rotation changes from IMU data.")
+    parser.add_argument("--epochs", type=int, default=epochs, help="Number of training epochs")
+    parser.add_argument("--batch_size", type=int, default=batch_size, help="Training batch size")
+    return parser.parse_args()
+
+args = args()
 
 ## pull all the data in
 
@@ -37,7 +50,7 @@ model.compile(
     loss='mse'
 )
 
-model.fit(inputs, outputs, epochs=100, batch_size=32)
+model.fit(inputs, outputs, epochs=args.epochs, batch_size=args.batch_size)
 
 print("Training complete!")
 

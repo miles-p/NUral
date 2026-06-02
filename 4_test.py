@@ -15,6 +15,10 @@ for row in data[1:]:
     gyro_y = float(row[9])
     gyro_z = float(row[11])
 
+    if '' in [accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z, row[14], row[16], row[18], row[20], row[22], row[24], row[26]]:
+        print("Skipping row with missing data")
+        continue
+
     ground_truth_d_pos_x = float(row[14])
     ground_truth_d_pos_y = float(row[16])
     ground_truth_d_pos_z = float(row[18])

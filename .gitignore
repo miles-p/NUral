@@ -1,6 +1,4 @@
-data/imu.csv
-data/optitrack.csv
-data/paired.csv
-data/recording.json
-data/test.csv
-models/model.keras
+.gitignore
+
+data/
+models/

@@ -15,7 +15,7 @@ def iter_records(path):
 
 def iter_imu_rows(path):
     for rec in iter_records(path):
-        if rec.get("type") != "message.input.Sensors":
+        if rec.get("type") != "message.platform.RawSensors":
             continue
         data = rec.get("data", {})
         accel = data.get("accelerometer", {}) or {}

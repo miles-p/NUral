@@ -1,6 +1,7 @@
 import tensorflow as tf
 import csv
 import argparse
+import os
 
 # training defaults
 epochs = 100

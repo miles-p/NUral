@@ -26,3 +26,4 @@ if __name__ == "__main__":
         subprocess.run(["python3", "2_pair_up.py", "--output", "data/paired.csv"], check=True)
         subprocess.run(["python3", "3_train.py"], check=True)
         subprocess.run(["python3", "4_test.py"], check=True)
+        subprocess.run(["python3", "-m", "tf2onnx.convert", "--keras", "models/model.keras", "--output", "models/model.onnx"], check=True)
